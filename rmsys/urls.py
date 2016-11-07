@@ -19,4 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^runner/', include('runner.urls')),
+    url(r'^race/', include('race.urls')),
 ]

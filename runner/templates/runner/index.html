@@ -1,1 +1,9 @@
-<h1>Runner</h1>
+{% if roster %}
+    <h1>Roster:</h1>
+    <ul>
+    {% for runner in roster %}
+        <li>{{runner}}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+{% endif %}
