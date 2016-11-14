@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}rscat{% endblock %}</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          xmlns="http://www.w3.org/1999/html">
+    <link href='https://fonts.googleapis.com/css?family=Rye' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'runner/style.css' %}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+
+        <!-- Header -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'runner:index' %}">rscat</a>
+        </div>
+
+        <!-- Items -->
+        <div class="collapse navbar-collapse" id="topNavBar">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="{% url 'runner:index' %}">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp; Runners
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'race:index' %}">
+                        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>&nbsp; Races
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp; Review
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{% url 'runner:index' %}">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% block body %}
+{% endblock %}
+</body>
+</html>

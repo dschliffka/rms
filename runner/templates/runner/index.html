@@ -1,9 +1,30 @@
-{% if roster %}
-    <h1>Roster:</h1>
-    <ul>
-    {% for runner in roster %}
-        <li>{{runner}}</li>
-    {% endfor %}
-    </ul>
-{% else %}
-{% endif %}
+{% extends 'runner/base.html' %}
+
+{% block title %}Runner Roster{% endblock %}
+
+{% block body %}
+    {% if roster %}
+        <h1>Roster:</h1>
+        <div class="container">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Graduation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for runner in roster %}
+                        <tr>
+                            <td>{{ runner.first_name }}</td>
+                            <td>{{ runner.last_name }}</td>
+                            <td>{{ runner.gradyear }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+    {% endif %}
+{% endblock %}
